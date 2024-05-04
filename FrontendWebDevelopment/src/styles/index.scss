@@ -1,0 +1,229 @@
+@use "dark";
+@use "light";
+@use "base";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;700&display=swap');
+
+$font-stack: 'Roboto Mono', monospace;
+ 
+html, body {
+    margin: 0em;
+    padding: 0em;
+    font-family: $font-stack;
+    height: 100%;
+}
+
+.mainHeader {
+    display: flex;
+    padding: 0.4em;
+    margin-right: 0em;
+
+    h1 {
+        padding-top: 0.2em;
+        padding-left: 0.4em;
+    }
+}
+
+.idList {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    li {
+        margin: 0.3em;
+    }
+}
+
+.body-dark {
+    @include base.body(dark.$bg0, dark.$fg0)
+}
+
+.body-light {
+    @include base.body(light.$bg0, light.$fg0)
+}
+
+.mainNavigation-dark {
+    @include base.mainNavigation(dark.$bg1, dark.$fg0);
+}
+
+.mainNavigation-light {
+    @include base.mainNavigation(light.$bg1, light.$fg0);
+}
+
+.milestoneHeader-dark {
+    @include base.milestoneHeader(dark.$bg2, dark.$fg0, dark.$red);
+}
+
+.milestoneHeader-accomplished-dark {
+    @include base.milestoneHeader(dark.$bg2, dark.$fg0, dark.$green);
+}
+
+.milestoneHeader-light {
+    @include base.milestoneHeader(light.$bg2, light.$fg0, light.$red);
+}
+
+.milestoneHeader-accomplished-light {
+    @include base.milestoneHeader(light.$bg2, light.$fg0, light.$green);
+}
+
+.milestone-dark {
+    @include base.milestone(dark.$bg2, dark.$fg0, dark.$red);
+}
+
+.milestone-light {
+    @include base.milestone(light.$bg2, light.$fg0, light.$red);
+}
+
+.milestone-accomplished-dark {
+    @include base.milestone(dark.$bg2, dark.$fg0, dark.$green);
+}
+
+.milestone-accomplished-light {
+    @include base.milestone(light.$bg2, light.$fg0, light.$green);
+}
+
+.milestoneForm-dark {
+    @include base.form(6, dark.$bg4, dark.$fg0, dark.$darkblue, dark.$fg0, dark.$bg1, dark.$darkred);
+}
+
+.milestoneForm-light {
+    @include base.form(6, light.$bg2, light.$fg0, light.$darkblue, light.$bg0, light.$bg1, light.$red);
+}
+
+.loginForm-dark {
+    @include base.form2(3, dark.$bg4, dark.$fg0, dark.$darkblue, dark.$fg0, dark.$bg0, dark.$darkred);
+}
+
+.loginForm-light {
+    @include base.form2(3, light.$bg2, light.$fg0, light.$darkblue, light.$bg0, light.$bg0, light.$red);
+}
+
+.registerForm-dark {
+    @include base.form2(5, dark.$bg4, dark.$fg0, dark.$darkblue, dark.$fg0, dark.$bg0, dark.$darkred);
+}
+
+.registerForm-light {
+    @include base.form2(5, light.$bg2, light.$fg0, light.$darkblue, light.$bg0, light.$bg0, light.$red);
+}
+
+.tag-development-dark {
+    @include base.tag(dark.$darkred, dark.$fg0);
+}
+
+.tag-info-dark {
+    @include base.tag(dark.$darkblue, dark.$fg0);
+}
+
+.tag-bugs-dark {
+    @include base.tag(dark.$darkgreen, dark.$fg0);
+}
+
+.tag-development-light {
+    @include base.tag(light.$darkred, light.$bg0);
+}
+
+.tag-info-light {
+    @include base.tag(light.$darkblue, light.$bg0);
+}
+
+.tag-bugs-light {
+    @include base.tag(light.$green, light.$bg0);
+}
+
+.blogPostHeader-dark {
+    @include base.blogPostHeader(dark.$bg2, dark.$fg0, dark.$darkyellow);
+}
+
+.blogPostHeader-light {
+    @include base.blogPostHeader(light.$bg2, light.$fg0, light.$darkyellow);
+}
+
+.blogPost-dark {
+    @include base.blogPost(dark.$bg2, dark.$fg0, dark.$darkyellow);
+}
+
+.blogPost-light {
+    @include base.blogPost(light.$bg2, light.$fg0, light.$darkyellow);
+}
+
+.blogPostForm-dark {
+    @include base.form(4, dark.$bg4, dark.$fg0, dark.$darkblue, dark.$fg0, dark.$bg1, dark.$darkred);
+}
+
+.blogPostForm-light {
+    @include base.form(4, light.$bg2, light.$fg0, light.$darkblue, light.$bg0, light.$bg1, light.$red);
+}
+
+.commentForm-dark {
+    @include base.form(4, dark.$bg4, dark.$fg0, dark.$darkblue, dark.$fg0, dark.$bg0, dark.$darkred);
+}
+
+.commentForm-light {
+    @include base.form(4, light.$bg2, light.$fg0, light.$darkblue, light.$bg0, light.$bg0, light.$red);
+}
+
+.commentEditForm-dark {
+    @include base.form(4, dark.$bg4, dark.$fg0, dark.$darkblue, dark.$fg0, dark.$bg3, dark.$darkred);
+}
+
+.commentEditForm-light {
+    @include base.form(4, light.$bg2, light.$fg0, light.$darkblue, light.$bg0, light.$bg1, light.$red);
+}
+
+.comment-dark {
+    @include base.comment(dark.$bg3, dark.$fg0, dark.$darkyellow);
+}
+
+.comment-light {
+    @include base.comment(light.$bg1, light.$fg0, light.$darkyellow);
+}
+
+.buttonEdit-dark {
+    @include base.button(dark.$blue, dark.$bg0);
+}
+
+.buttonRemove-dark {
+    @include base.button(dark.$red, dark.$bg0);
+}
+
+.buttonEdit-light {
+    @include base.button(light.$blue, light.$bg0);
+}
+
+.buttonRemove-light {
+    @include base.button(light.$red, light.$bg0);
+}
+
+.buttonCancel-light {
+    @include base.button(light.$red, light.$bg0);
+}
+
+.idSelector-dark {
+    @include base.idSelector(dark.$bg4, dark.$fg0);
+}
+
+.idSelector-light {
+    @include base.idSelector(light.$bg2, light.$fg0);
+}
+
+.managementPanel-dark {
+    @include base.managementPanel(dark.$bg1, dark.$fg0, dark.$darkyellow);
+}
+
+.managementPanel-light {
+    @include base.managementPanel(light.$bg1, light.$fg0, light.$darkyellow);
+}
+
+@media screen and (max-width: 480px) {
+    .mainHeader {
+        display: none;
+    }
+
+    .mainNavigation-dark {
+        @include base.mainNavigationCollapsible(dark.$bg1);
+    }
+
+    .mainNavigation-light {
+        @include base.mainNavigationCollapsible(light.$bg1);
+    }
+}
+

@@ -1,0 +1,289 @@
+@mixin body($bg, $fg) { 
+    background-color: $bg;
+    color: $fg; 
+}
+
+@mixin mainNavigation($bg, $fg) {
+    background-color: $bg;
+    width: 100%;
+    height: 4em;
+    margin: 0em;
+    
+    #check {
+        display: none;
+    }
+    svg {
+        vertical-align: -0.14em;
+    }
+    button {
+        background: none;
+        border: none;
+        color: $fg;
+        outline: inherit;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    label {
+        display: none;
+    }
+    ul {
+        list-style: none;
+        float: right;
+        padding-left: 0em;
+    }
+    li {
+        display: inline-block;
+        margin: 0em 0.5em;
+        font-size: 1.5em;
+        text-transform: uppercase; 
+    }
+    .link {
+        text-decoration: none;
+        color: $fg;
+    }
+}
+
+@mixin mainNavigationCollapsible($bg) {
+    #check:checked ~ ul {
+        top: 0%; 
+    }
+    .menuIcon {
+        display: block;
+        text-align: center;
+        line-height: 3em;
+        font-size: 1.5em;
+    }
+    .li-menuIcon {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        display: flex;
+        flex-flow: column;
+        margin: 0em;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        background-color: $bg;
+        top: -100%;
+        transition: all .5s;
+    }
+    li {
+        padding: 0.5em;
+    }
+}
+
+@mixin milestone($bg, $fg, $border) {
+    background-color: $bg;
+    color: $fg;
+    text-align: center;
+    margin: 0.8em;
+    border-top: solid $border 4px;
+    border-bottom: solid $border 4px;
+
+    img {
+        width: 90%;
+    }
+}
+
+@mixin milestoneHeader($bg, $fg, $border) {
+    padding: 0.2em;
+    margin: 0.3em;
+    background: $bg;
+    color: $fg;
+    text-decoration: none;
+    
+    svg {
+        vertical-align: -0.15em;
+    }
+    div {
+        border: solid $border 2px;
+        padding: 0.3em;
+    }
+    p {
+        margin: 0em;
+    }
+}
+
+@mixin tag($bg, $fg) {
+    display: inline;
+    border-radius: 0.4em;
+    padding: 0em 0.3em 0.1em 0.3em;
+    color: $fg;
+    font-weight: bolder;
+    background-color: $bg;
+}
+
+@mixin blogPostHeader($bg, $fg, $border) {
+    padding: 0.2em;
+    margin: 0.4em;
+    background: $bg;
+    color: $fg;
+    text-decoration: none;
+    
+    svg {
+        vertical-align: -0.15em;
+    }
+    div {
+        border: solid $border 3px;
+        padding: 0.3em;
+    }
+    p {
+        margin: 0em;
+    }
+}
+
+@mixin blogPost($bg, $fg, $border) {
+    padding: 0em 0.2em;
+    margin: 0.4em;
+    background-color: $bg;
+    color: $fg;
+
+    div {
+        border-left: solid $border 3px;
+        padding-left: 0.3em;
+    }
+}
+
+@mixin comment($bg, $fg, $border) {
+    padding: 0.2em 0em;
+    margin: 0.4em;
+    background-color: $bg;
+    color: $fg;
+
+    div {
+        border-top: solid $border 3px;
+        padding-top: 0.3em;
+    }
+    p {
+        padding: 0.2em;
+        margin: 0em;
+    }
+}
+
+@mixin button($bg, $fg) {
+    background-color: $bg;
+    color: $fg;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 0.3em;
+    padding: 0.2em;
+    margin: 0.2em;
+}
+
+@mixin idSelector($bg, $fg) {
+    background-color: $bg;
+    color: $fg;
+    outline: inherit;
+    border: none;
+    margin-right: 0.2em;
+}
+
+@mixin managementPanel($bg, $fg, $border) {
+    background-color: $bg;
+    padding: 0.2em;
+    margin: 0.5em;
+
+    h3 {
+        margin: 0.2em;
+        border-bottom: 2px solid $border;
+    }
+}
+
+@mixin form($rows, $input-bg, $input-fg, $button-bg, $button-fg, $error-bg, $error-fg) {
+    display: grid;
+    grid-template-rows: $rows;
+    grid-template-columns: 6ch 8ch 10ch 1fr;
+    grid-gap: 0.5em;
+    padding: 0.5em;
+
+    label {
+        grid-column: 1;
+    }
+    input, select, option {
+        background-color: $input-bg;
+        color: $input-fg;
+        grid-column: 2 / 4;
+        outline: inherit;
+        border: none;
+    }
+    textarea {
+        width: 90%;
+        background-color: $input-bg;
+        color: $input-fg;
+        border: none;
+        min-width: 90%;
+        max-width: 90%;
+        min-height: 3em;
+        max-height: 10em;
+        grid-row: $rows - 1;
+        grid-column: 1 / -1;
+        outline: inherit;
+    }
+    button {
+        background-color: $button-bg;
+        color: $button-fg;
+        border-radius: 0.3em;
+        border: none;
+        padding: 0.2em;
+        font-size: 1.3em;
+        grid-row: $rows;
+        grid-column: 1 / 3;
+    }
+    .form-error, .error {
+        background-color: $error-bg;
+        color: $error-fg;
+        grid-row: $rows;
+        grid-column: 3 / -1;
+        margin: 0em;
+    }
+}
+
+@mixin form2($rows, $input-bg, $input-fg, $button-bg, $button-fg, $error-bg, $error-fg) {
+    display: grid;
+    grid-template-rows: $rows;
+    grid-template-columns: 10ch 10ch 10ch 1fr;
+    grid-gap: 0.5em;
+    padding: 0.5em;
+
+    label {
+        grid-column: 1;
+    }
+    input, select, option {
+        background-color: $input-bg;
+        color: $input-fg;
+        grid-column: 2 / 4;
+        outline: inherit;
+        border: none;
+    }
+    textarea {
+        width: 90%;
+        background-color: $input-bg;
+        color: $input-fg;
+        border: none;
+        min-width: 90%;
+        max-width: 90%;
+        min-height: 3em;
+        max-height: 10em;
+        grid-row: $rows - 1;
+        grid-column: 1 / -1;
+        outline: inherit;
+    }
+    button {
+        background-color: $button-bg;
+        color: $button-fg;
+        border-radius: 0.3em;
+        border: none;
+        padding: 0.2em;
+        font-size: 1.3em;
+        grid-row: $rows;
+    }
+    .form-error, .error {
+        background-color: $error-bg;
+        color: $error-fg;
+        grid-row: $rows;
+        grid-column: 3 / -1;
+        margin: 0em;
+    }
+}
